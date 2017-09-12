@@ -1,0 +1,18 @@
+﻿We as a group will meet after each class period for a “stand up” meeting progress check for approximately 30 minutes.  
+
+
+To build this game, we are planning on using Unity.
+
+
+Tasks:
+* Every member of the team will design a prototype for a potential game
+* The team will discuss everyone’s prototypes and play a round or level for each of the games.  
+* After each game, the team will discuss all of the positives and negatives of a particular game design
+* The team will decide on a design and modify the design to incorporate the lessons learned from the other prototypes
+* We will create a trello that tracks all of the design tasks for the initial prototype, and assign specific tasks to each member of the team
+* Create  timeline for task.  
+
+
+Procedure:
+Weekly team stand-up meeting to report on progress
+Well-maintained github with each member having their own branch and group merging sessions.
