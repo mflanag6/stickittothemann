@@ -18,5 +18,8 @@ Weekly team stand-up meeting after class to report on progress
 Well-maintained github with each member having their own branch and group merging sessions.
 
 Git Procedure: 
-Each new feature or change should be developed on a separate branch from the master game.  Once the change is tested and we're fairly sure it won't break anything new, it can be merged into the master branch for everyone to pull.  This also allows us to work on different aspects of the game simultaneously.
+Each new feature or change should be developed on a separate branch from the master game.  
+Once the change is tested and we're fairly sure it won't break anything new, it can be merged 
+into the master branch for everyone to pull.  This also allows us to work on different 
+aspects of the game simultaneously.
 
