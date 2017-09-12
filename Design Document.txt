@@ -3,6 +3,8 @@
 
 To build this game, we are planning on using Unity.
 
+We will use Trello to track and assign individual tasks.
+
 
 Tasks:
 * Every member of the team will design a prototype for a potential game
