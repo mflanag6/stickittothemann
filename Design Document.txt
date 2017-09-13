@@ -11,15 +11,21 @@ Tasks:
 * The team will discuss everyone’s prototypes and play a round or level for each of the games.  
 * After each game, the team will discuss all of the positives and negatives of a particular game design
 * The team will decide on a design and modify the design to incorporate the lessons learned from the other prototypes
-* We will create a trello that tracks all of the design tasks for the initial prototype, and assign specific tasks to each member of the team
+* We will create a trello that tracks all of the design tasks for the initial prototype, and assign specific tasks to each 
+  member of the team
 * Create  timeline for task.  
 
 Task Breakdown: 
-The distribution of tasks will likely be Nick P. and Ashley on the front-end tasks and Matt and Nick C. on the back-end.  This is a pretty flexible arrangement, and team members could work on a variety of tasks depending on priority, schedule, etc.  
+The distribution of tasks will likely be Nick P. and Ashley on the front-end tasks and Matt and Nick C. on the back-end.  
+This is a pretty flexible arrangement, and team members could work on a variety of tasks depending on priority, schedule, etc.  
 
 
 Procedure:
-Weekly team stand-up meeting after class to report on progress.  We will just hang around the classroom or find another convenient space for a few minutes.  During the stand-up each team member will report on what they have done in the past week and what they plan to do in the upcoming week.  Any major issues that need to be worked out can be done here as well.  We can also use the slack channel for quick communication during the week.  If we have an issue that is unresolvable, we will decide as a group a new direction to move in.  
+Weekly team stand-up meeting after class to report on progress.  We will just hang around the classroom or find another convenient 
+space for a few minutes.  During the stand-up each team member will report on what they have done in the past week and what they plan 
+to do in the upcoming week.  Any major issues that need to be worked out can be done here as well.  We can also use the slack channel 
+for quick communication during the week.  If we have an issue that is unresolvable, we will decide as a group a new direction to move 
+in.  
 Well-maintained github with each member having their own branch and group merging sessions.
 
 Git Procedure: 
@@ -27,5 +33,7 @@ Each new feature or change should be developed on a separate branch from the mas
 Once the change is tested and we're fairly sure it won't break anything new, it can be merged 
 into the master branch for everyone to pull.  This also allows us to work on different 
 aspects of the game simultaneously.
-We can use the issue tracker on github to assign tasks to team members or log bugs or other issues during development.  We will also use pull requests to merge features into the game and document/track each branch of development.  These features will be maintained by Matt.
+We can use the issue tracker on github to assign tasks to team members or log bugs or other issues during development.  We will also 
+use pull requests to merge features into the game and document/track each branch of development.  These features will be maintained by 
+Matt.
 
