@@ -36,7 +36,7 @@ public class StartOptions : MonoBehaviour {
 
 
 	public void StartButtonClicked()
-	{
+    {
 		//If changeMusicOnStart is true, fade out volume of music group of AudioMixer by calling FadeDown function of PlayMusic, using length of fadeColorAnimationClip as time. 
 		//To change fade time, change length of animation "FadeToColor"
 		if (changeMusicOnStart) 
@@ -107,7 +107,18 @@ public class StartOptions : MonoBehaviour {
 		//Set trigger for animator to start animation fading out Menu UI
 		animMenuAlpha.SetTrigger ("fade");
 		Invoke("HideDelayed", fadeAlphaAnimationClip.length);
-		Debug.Log ("Game started in same scene! Put your game starting stuff here.");
+		Debug.Log ("Game begins here.");
+
+        //TODO: add Nick's multiply thing here, change background
+        //TODO: show FTUE/tutorial text - names will need to be changed
+        //TODO: will probably need FTUE for each screen - level select, shoot, powerups, etc.
+
+        showPanels.ShowTutorialPanel();     //Show a basic tutorial on how to select a level
+
+        //when you close the tutorial panel for now, it automatically shows the level panel
+        //this will probably need to be changed in the future
+        //showPanels.ShowLevelPanel();
+
 	}
 
 
