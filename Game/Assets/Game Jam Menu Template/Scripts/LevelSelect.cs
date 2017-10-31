@@ -10,6 +10,7 @@ public class LevelSelect : MonoBehaviour {
 	public Text titleText;								// Instructional text to unlock password
 	public string theInput;								// Password text the user enters
 	public int highestLevel = 1;						// Maximum level reached by the user
+	private int selectedLevel;
 	private string passwordLevel2 = "password2";		// Password to unlock Level 2
 	private string passwordLevel3 = "password3";		// Password to unlock Level 3
 	private string passwordLevel4 = "password4";		// Password to unlock Level 4
@@ -22,18 +23,57 @@ public class LevelSelect : MonoBehaviour {
 	}
 
 	public void checkLocked(int level) {
-		if (level > highestLevel) {						// Level is locked
+		selectedLevel = level;
+		if (selectedLevel > highestLevel) {						// Level is locked
 			showPanels.ShowPasswordPanel();
-			titleText.text = "This level " + level.ToString() + " is locked. Enter the password to unlock it.";
+			titleText.text = "This level " + selectedLevel.ToString() + " is locked. Enter the password to unlock it.";
 		} else {										// Level is already unlocked
 			showPanels.HideLevelPanel();
 		}
 	}
 
 	public void checkInput() {
+		bool correct = false;
 		theInput = passwordInputField.text;
+		switch (selectedLevel) {
+			case 2:
+				if (theInput == passwordLevel2) {
+					correct = true;
+				} else {
+					correct = false;
+				}
+				break;
+			case 3:
+				if (theInput == passwordLevel3) {
+					correct = true;
+				} else {
+					correct = false;
+				}
+				break;
+			case 4:
+				if (theInput == passwordLevel4) {
+					correct = true;
+				} else {
+					correct = false;
+				}
+				break;
+			case 5:
+				if (theInput == passwordLevel5) {
+					correct = true;
+				} else {
+					correct = false;
+				}
+				break;
+			case 6:
+				if (theInput == passwordLevel6) {
+					correct = true;
+				} else {
+					correct = false;
+				}
+				break;
+		}
 
-		if (theInput == passwordLevel2) {
+		if (correct) {
 			if (showPanels != null) {
 				showPanels.HidePasswordPanel();
 				showPanels.HideLevelPanel();
@@ -45,8 +85,8 @@ public class LevelSelect : MonoBehaviour {
 			}
 		} else {
 			titleText.text = "The password you entered is incorrect. Please try again.";
-			Debug.Log(passwordLevel2);
-			Debug.Log(theInput);
-		}
+		}		
+
+
 	}
 }
