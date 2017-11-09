@@ -10,6 +10,7 @@ public class ShowPanels : MonoBehaviour {
     public GameObject helpPanel;                            //Store a reference to the Game Object HelpPanel
     public GameObject tutorialPanel;                        //Store a reference to the Game Object TutorialPanel
     public GameObject levelPanel;                           //Store a reference to the Game Object LevelPanel
+    public GameObject passwordPanel;                        //Store a reference to the Game Object PasswordPanel
 
 	//Call this function to activate and display the Options panel during the main menu
 	public void ShowOptionsPanel()
@@ -82,6 +83,20 @@ public class ShowPanels : MonoBehaviour {
 	public void HidePausePanel()
 	{
 		pausePanel.SetActive (false);
+		optionsTint.SetActive(false);
+
+	}
+	//Call this function to activate and display the Password panel during level select
+	public void ShowPasswordPanel()
+	{
+		passwordPanel.SetActive (true);
+		optionsTint.SetActive(true);
+	}
+
+	//Call this function to deactivate and hide the Password panel during level select
+	public void HidePasswordPanel()
+	{
+		passwordPanel.SetActive (false);
 		optionsTint.SetActive(false);
 
 	}
