@@ -17,6 +17,9 @@ public class LevelSelect : MonoBehaviour {
 	private string passwordLevel5 = "password5";		// Password to unlock Level 5
 	private string passwordLevel6 = "password6";		// Password to unlock Level 6
 
+    //public StartOptions startOptions;                  //reference to StartOptions class, for now gameplay is there
+    public Multiply multiply;
+
 	void Start () {
 		// titleText.text = "This level is locked. Enter the password to unlock it.";
 		// showPanels.HidePasswordPanel();
@@ -29,7 +32,8 @@ public class LevelSelect : MonoBehaviour {
 			titleText.text = "Level " + selectedLevel.ToString() + " is locked. Enter the password to unlock it.";
 		} else {										// Level is already unlocked
 			showPanels.HideLevelPanel();
-
+            multiply.Start();
+            //startOptions.OnLevelWasLoaded();
 			// Proceed to proper level
 		}
 	}
@@ -79,6 +83,8 @@ public class LevelSelect : MonoBehaviour {
 			if (showPanels != null) {
 				showPanels.HidePasswordPanel();
 				showPanels.HideLevelPanel();
+
+                //startOptions.OnLevelWasLoaded();
 
 				// Proceed to the proper level
 
