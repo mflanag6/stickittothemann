@@ -18,17 +18,19 @@ public class LevelSelect : MonoBehaviour {
 	private string passwordLevel6 = "password6";		// Password to unlock Level 6
 
 	void Start () {
-		titleText.text = "This level is locked. Enter the password to unlock it.";
-		showPanels.HidePasswordPanel();
+		// titleText.text = "This level is locked. Enter the password to unlock it.";
+		// showPanels.HidePasswordPanel();
 	}
 
 	public void checkLocked(int level) {
 		selectedLevel = level;
-		if (selectedLevel > highestLevel) {						// Level is locked
+		if (selectedLevel > highestLevel) {				// Level is locked
 			showPanels.ShowPasswordPanel();
-			titleText.text = "This level " + selectedLevel.ToString() + " is locked. Enter the password to unlock it.";
+			titleText.text = "Level " + selectedLevel.ToString() + " is locked. Enter the password to unlock it.";
 		} else {										// Level is already unlocked
 			showPanels.HideLevelPanel();
+
+			// Proceed to proper level
 		}
 	}
 
