@@ -38,6 +38,34 @@ public class Multiply : MonoBehaviour {
 
 
 
+
+	public bool checkAnswer(){
+
+
+		try 
+		{
+			firstNum = int.Parse (textinput.text);
+			secondNum = int.Parse (textinput2.text);
+			answer = int.Parse (answerInput.text);
+		}
+
+		catch (Exception e)
+		{
+
+		}
+
+
+
+		if ((firstNum * secondNum) == answer) {
+			return true;
+			Debug.Log ("correct");
+		}
+
+		return false;
+	}
+
+
+
 	// Update is called once per frame
 	void Update () {
 	
