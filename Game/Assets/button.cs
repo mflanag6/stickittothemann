@@ -7,7 +7,7 @@ public class button : MonoBehaviour {
 
 
 	public Sprite revealSprite;
-	public GameObject mult;
+	///public GameObject mult;
 	private Image image;
 	private int x;
 	private int y;
@@ -29,7 +29,7 @@ public class button : MonoBehaviour {
 		Debug.Log(x + " " + y);
 
 		Debug.Log("instantiating");
-		GameObject multiplicationCheck = Instantiate (mult, new Vector3 (100,100, 0), Quaternion.identity, this.transform) as GameObject;
+		//GameObject multiplicationCheck = Instantiate (mult, new Vector3 (100,100, 0), Quaternion.identity, this.transform) as GameObject;
 		Debug.Log("instantiated");
 
 		this.GetComponentInParent<level> ().check (x, y);

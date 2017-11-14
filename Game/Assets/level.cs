@@ -13,7 +13,7 @@ public class level : MonoBehaviour {
 	public GameObject oceanTile;
 	public GameObject pirateTile;
 	// Use this for initialization
-	void Start () {
+	public void Start() {
 	
 		ocean = new int[10, 10];
 

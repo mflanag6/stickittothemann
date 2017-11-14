@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Multiply : MonoBehaviour {
 
     public ShowPanels showPanels;
+    public level level1;
 	private int firstNum;
 	private int secondNum;
 	private int answer;
@@ -15,8 +16,9 @@ public class Multiply : MonoBehaviour {
 
 	// Use this for initialization
 	public void Start () {
+        level1.Start();
 
-        showPanels.ShowMultiplyPanel();
+        //showPanels.ShowMultiplyPanel();
 		//GameObject input = this.gameObject.transform.GetChild(2).gameObject;
 
 		//string input2 = box.text;//.GetComponent (typeof(Text));
@@ -34,7 +36,7 @@ public class Multiply : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-
+    /*
 		try 
 			{
 		firstNum = int.Parse (textinput.text);
@@ -56,7 +58,7 @@ public class Multiply : MonoBehaviour {
 		Debug.Log("running");
 
 
-
+*/
 
 
 
