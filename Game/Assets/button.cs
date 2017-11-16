@@ -4,8 +4,6 @@ using UnityEngine.UI;
 
 public class button : MonoBehaviour {
 
-
-
 	public Sprite revealSprite;
 	///public GameObject mult;
 	private Image image;
@@ -24,23 +22,15 @@ public class button : MonoBehaviour {
 	void Update () {
 	
 	}
-	void TaskOnClick()
+	
+    void TaskOnClick()
 	{
 		Debug.Log(x + " " + y);
 
-		Debug.Log("instantiating");
-		//GameObject multiplicationCheck = Instantiate (mult, new Vector3 (100,100, 0), Quaternion.identity, this.transform) as GameObject;
-		Debug.Log("instantiated");
-
-		this.GetComponentInParent<level> ().check (x, y);
-
-
+		this.GetComponentInParent<level>().check(x, y);
 
 		image.sprite = revealSprite;
-
-
-
-	}
+   	}
 
 
 	public void SetParams(int xInput, int yInput){

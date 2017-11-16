@@ -16,50 +16,11 @@ public class Multiply : MonoBehaviour {
 
 	// Use this for initialization
 	public void Start () {
-        level1.Start();
 
-        //showPanels.ShowMultiplyPanel();
-		//GameObject input = this.gameObject.transform.GetChild(2).gameObject;
-
-		//string input2 = box.text;//.GetComponent (typeof(Text));
-		//input.GetComponent<inputField> ();
-
-		//string hello = input.gameObject.transform.GetChild(1).gameObject.GetComponent<Script>();
-
-		//var inputttt = gameObject.GetComponent<InputField>();
-
-		Debug.Log("testing multiply");
-
-		//Debug.Log(textinput.text);
-	}
+    }
 
 	// Update is called once per frame
-	void Update () {
-	
-    /*
-		try 
-			{
-		firstNum = int.Parse (textinput.text);
-		secondNum = int.Parse (textinput2.text);
-		answer = int.Parse (answerInput.text);
-			}
-
-		catch (Exception e)
-			{
-
-			}
-	
-
-
-		if ((firstNum * secondNum) == answer) {
-		Debug.Log ("correct");
-		}
-
-		Debug.Log("running");
-
-
-*/
-
+    void Update () {
 
 
 	}

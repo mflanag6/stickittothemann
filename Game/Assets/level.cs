@@ -6,15 +6,23 @@ using System;
 public class level : MonoBehaviour {
 
 
+    public GameObject Tile;
+    public RectTransform Multiply;  
 
 	public int size;
 	private int [,] ocean;
-
+    
 	public GameObject oceanTile;
 	public GameObject pirateTile;
+
+    
+
 	// Use this for initialization
 	public void Start() {
-	
+    }
+
+    public void createGrid() {
+    
 		ocean = new int[10, 10];
 
 
@@ -30,63 +38,49 @@ public class level : MonoBehaviour {
 		int x = UnityEngine.Random.Range(0,size);
 		int y = UnityEngine.Random.Range(0,size);
 		ocean[x,y] = 1;
-
-
-		Debug.Log ("hello");
-
-		Vector3 offsetY = new Vector3(0,100,0);
-		//Vector3 value = (Vector3) this.transform;
-		Vector3 offsetX = new Vector3(100,0,0);
-
-		Debug.Log (this.transform.position);
-		//Instantiate(tile, this.transform);
-
-		//ICloneable helper;
-
-		Vector3 newPos = (this.transform.position + offsetY);
-		//Transform newTransform = this.transform;
-		//newTransform.position = newPos;
-		//GameObject oceanTile; 
-
-
+            
+        int offsetX = 100;
+        int offsetY = 100;
 
 		for (int i = 0; i < size; i++) {
 			/// i is the x value of the thing
 
 			for (int j = 0; j < size; j++) {
 				/// j is the yvalue of the thing
-				/// 
+       
+                Vector3 pos = new Vector3(i * 100 + offsetX, j * 100 + offsetY, 0);
+                Debug.Log ("new pos is " + pos);
+
 				if (ocean [i, j] == 0) {
-					GameObject tile = Instantiate (oceanTile, new Vector3 (i * 100, j * 100, 0), Quaternion.identity, this.transform) as GameObject;
+                    GameObject tile = Instantiate(oceanTile);
+                    //tile.transform.position.Set(i*100, j*100, 0);
+                    tile.transform.SetParent(Multiply);
+
+                    tile.transform.position = pos;
 					tile.GetComponent<button> ().SetParams (i, j);
 				} else {
-					GameObject tile = Instantiate (pirateTile, new Vector3 (i * 100, j * 100, 0), Quaternion.identity,this.transform) as GameObject;
+                    GameObject tile = Instantiate(pirateTile);
+                    //tile.transform.position.Set(i*100, j*100, 0);
+                    tile.transform.SetParent(Multiply);
+
+                    tile.transform.position = pos;
 					tile.GetComponent<button> ().SetParams (i, j);
 				}
 
 			}
 		}
 
-
-
-		//oceanTile.transform.position = newPos;
-
-		//newPos = (this.transform.position + offsetY);
-		//newTransform = this.transform;
-		//newTransform.position = newPos;
-
-		//Instantiate(tile, newTransform);
-
-
-
-
-
-	
+        Debug.Log ("done w/ board");
 
 	}
 
 
+
 	public void check(int xCord, int yCord){
+
+        //show multiply panel
+        //this.GetComponentInParent<Multiply> ().showPanels.ShowMultiplyPanel ();
+        
 
 		if (ocean [xCord, yCord] == 1) {
 			Debug.Log ("hit");
