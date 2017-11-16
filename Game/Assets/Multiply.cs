@@ -19,6 +19,12 @@ public class Multiply : MonoBehaviour {
 
     }
 
+    public void createPanel() {
+        
+        showPanels.ShowMultiplyPanel();
+
+    }
+
 	// Update is called once per frame
     void Update () {
 

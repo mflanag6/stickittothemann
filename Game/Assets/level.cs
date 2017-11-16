@@ -79,8 +79,7 @@ public class level : MonoBehaviour {
 	public void check(int xCord, int yCord){
 
         //show multiply panel
-        //this.GetComponentInParent<Multiply> ().showPanels.ShowMultiplyPanel ();
-        
+        this.GetComponent<ShowPanels>().ShowMultiplyPanel();
 
 		if (ocean [xCord, yCord] == 1) {
 			Debug.Log ("hit");
