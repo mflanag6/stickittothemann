@@ -16,6 +16,11 @@ public class LevelSelect : MonoBehaviour {
 	private string passwordLevel4 = "password4";		// Password to unlock Level 4
 	private string passwordLevel5 = "password5";		// Password to unlock Level 5
 	private string passwordLevel6 = "password6";		// Password to unlock Level 6
+    private int levelSize = 4;
+    public level levelInstance;
+
+    //public StartOptions startOptions;                  //reference to StartOptions class, for now gameplay is there
+    public Multiply multiply;
 
 	void Start () {
 		// titleText.text = "This level is locked. Enter the password to unlock it.";
@@ -29,7 +34,9 @@ public class LevelSelect : MonoBehaviour {
 			titleText.text = "Level " + selectedLevel.ToString() + " is locked. Enter the password to unlock it.";
 		} else {										// Level is already unlocked
 			showPanels.HideLevelPanel();
-
+            levelInstance.size = levelSize;
+            levelInstance.createGrid();
+            //startOptions.OnLevelWasLoaded();
 			// Proceed to proper level
 		}
 	}
@@ -41,6 +48,7 @@ public class LevelSelect : MonoBehaviour {
 			case 2:
 				if (theInput == passwordLevel2) {
 					correct = true;
+                    levelSize = 4;
 				} else {
 					correct = false;
 				}
@@ -48,6 +56,7 @@ public class LevelSelect : MonoBehaviour {
 			case 3:
 				if (theInput == passwordLevel3) {
 					correct = true;
+                    levelSize = 4;
 				} else {
 					correct = false;
 				}
@@ -55,6 +64,7 @@ public class LevelSelect : MonoBehaviour {
 			case 4:
 				if (theInput == passwordLevel4) {
 					correct = true;
+                    levelSize = 4;
 				} else {
 					correct = false;
 				}
@@ -62,6 +72,7 @@ public class LevelSelect : MonoBehaviour {
 			case 5:
 				if (theInput == passwordLevel5) {
 					correct = true;
+                    levelSize = 4;
 				} else {
 					correct = false;
 				}
@@ -69,6 +80,7 @@ public class LevelSelect : MonoBehaviour {
 			case 6:
 				if (theInput == passwordLevel6) {
 					correct = true;
+                    levelSize = 4;
 				} else {
 					correct = false;
 				}
@@ -79,7 +91,9 @@ public class LevelSelect : MonoBehaviour {
 			if (showPanels != null) {
 				showPanels.HidePasswordPanel();
 				showPanels.HideLevelPanel();
-
+                
+                levelInstance.size = levelSize;
+                levelInstance.createGrid();
 				// Proceed to the proper level
 
 			} else {

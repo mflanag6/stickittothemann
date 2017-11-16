@@ -11,6 +11,7 @@ public class ShowPanels : MonoBehaviour {
     public GameObject tutorialPanel;                        //Store a reference to the Game Object TutorialPanel
     public GameObject levelPanel;                           //Store a reference to the Game Object LevelPanel
     public GameObject passwordPanel;                        //Store a reference to the Game Object PasswordPanel
+    public GameObject multiplyPanel;                        //Store a reference ot the Game Object MultiplyPanel -- this is in a different prefab
 
 	//Call this function to activate and display the Options panel during the main menu
 	public void ShowOptionsPanel()
@@ -100,4 +101,18 @@ public class ShowPanels : MonoBehaviour {
 		optionsTint.SetActive(false);
 
 	}
+
+    //Call this function to activate and display the Multiply panel during gameplay
+    public void ShowMultiplyPanel()
+    {
+        multiplyPanel.SetActive (true);
+    }
+
+    //Call this function to deactivate and hide the Multiply panel during gameplay
+    public void HideMultiplyPanel()
+    {
+        multiplyPanel.SetActive (false);
+    }
+
+
 }
