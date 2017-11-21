@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System;
 
-public class level : MonoBehaviour {
+public class level : Multiply {
 
 
     public GameObject Tile;
@@ -14,6 +14,9 @@ public class level : MonoBehaviour {
     
 	public GameObject oceanTile;
 	public GameObject pirateTile;
+
+    private bool submitted = false;
+    private int x, y, a;
 
     
 
@@ -75,22 +78,72 @@ public class level : MonoBehaviour {
 	}
 
 
+  /*public IEnumerator WaitForButton()
+  {
+    while(!submitted)
+      yield return null;
 
-	public void check(int xCord, int yCord){
+    this.GetComponent<ShowPanels>().HideMultiplyPanel();
+    a = Int32.Parse(answerInput.text);
+    if (a == x * y)
+    {
+      yield return true;
+    }
+    else
+    {
+      yield return false;
+    }
+  }*/
+    
+
+    public bool check(int xCord, int yCord){
+
+        Debug.Log ("Checking " + xCord + " " + yCord);
+        x = xCord;
+        y = yCord;
+        submitted = false;
 
         //show multiply panel
         this.GetComponent<ShowPanels>().ShowMultiplyPanel();
-        //this.GetComponent<ShowPanels>().multiplyPanel.transform.position = new Vector3(350, 350, 0);
+        firstNumber.text = xCord.ToString();
+        secondNumber.text = yCord.ToString();
+   
+        //WaitForButton();
+        
+        /*while (submitted == false)
+        {
+            yield return null;
+            //wait for button press and submission of answer      
+        }
 
-		if (ocean [xCord, yCord] == 1) {
-			Debug.Log ("hit");
-		} else {
-			Debug.Log ("miss");
-		}
+        this.GetComponent<ShowPanels>().HideMultiplyPanel();
+        */
+        if (a == xCord * yCord)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
 	}
+
+    public void submission()
+    {
+        Debug.Log ("fire pressed");
+        submitted = true;
+        /*a = Int32.Parse (answerInput.text);
+        if (a == x * y)
+        {
+            this.GetComponentInChildren<button> ().discovered = true;
+            this.GetComponentInChildren<button> ().checkDiscovered ();
+            this.GetComponent<ShowPanels>().HideMultiplyPanel();
+        }*/
+  }
 }

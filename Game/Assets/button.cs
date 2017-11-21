@@ -9,6 +9,7 @@ public class button : MonoBehaviour {
 	private Image image;
 	private int x;
 	private int y;
+    public bool discovered;
 
 
 	// Use this for initialization
@@ -26,11 +27,18 @@ public class button : MonoBehaviour {
     void TaskOnClick()
 	{
 		Debug.Log(x + " " + y);
-
-		this.GetComponentInParent<level>().check(x, y);
-
-		image.sprite = revealSprite;
+        
+        if(!discovered)
+		    discovered = this.GetComponentInParent<level>().check(x, y);
+        
+        checkDiscovered();
    	}
+
+    public void checkDiscovered()
+    {
+        if (discovered)
+            image.sprite = revealSprite;
+    }
 
 
 	public void SetParams(int xInput, int yInput){
