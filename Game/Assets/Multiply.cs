@@ -10,8 +10,8 @@ public class Multiply : MonoBehaviour {
 	private int firstNum;
 	private int secondNum;
 	private int answer;
-	public Text textinput;
-	public Text textinput2;
+	public Text firstNumber;
+	public Text secondNumber;
 	public Text answerInput;
 
 	// Use this for initialization

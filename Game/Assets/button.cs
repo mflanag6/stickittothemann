@@ -27,9 +27,10 @@ public class button : MonoBehaviour {
 	{
 		Debug.Log(x + " " + y);
 
-		this.GetComponentInParent<level>().check(x, y);
+		bool check = this.GetComponentInParent<level>().check(x, y);
 
-		image.sprite = revealSprite;
+        if(check)
+            image.sprite = revealSprite;
    	}
 
 

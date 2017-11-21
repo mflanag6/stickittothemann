@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System;
 
-public class level : MonoBehaviour {
+public class level : Multiply {
 
 
     public GameObject Tile;
@@ -14,6 +14,8 @@ public class level : MonoBehaviour {
     
 	public GameObject oceanTile;
 	public GameObject pirateTile;
+
+    private bool submitted = false;
 
     
 
@@ -76,21 +78,47 @@ public class level : MonoBehaviour {
 
 
 
-	public void check(int xCord, int yCord){
+    public bool check(int xCord, int yCord){
+
+        submitted = false;
 
         //show multiply panel
         this.GetComponent<ShowPanels>().ShowMultiplyPanel();
-        //this.GetComponent<ShowPanels>().multiplyPanel.transform.position = new Vector3(350, 350, 0);
+        firstNumber.text = xCord.ToString();
+        secondNumber.text = yCord.ToString();
 
+        while (!submitted)
+        {
+            //wait for button press and submission of answer      
+        }
+
+        this.GetComponent<ShowPanels>().HideMultiplyPanel();
+        
+        int a = Int32.Parse(answerInput.text);
+        if (a == xCord * yCord)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        
+    /*
 		if (ocean [xCord, yCord] == 1) {
 			Debug.Log ("hit");
 		} else {
 			Debug.Log ("miss");
-		}
+		}*/
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
 	}
+
+    public void submission()
+    {
+        submitted = true;
+    }
 }
