@@ -16,6 +16,7 @@ public class level : Multiply {
 	public GameObject pirateTile;
 
     private bool submitted = false;
+    private int x, y, a;
 
     
 
@@ -77,24 +78,46 @@ public class level : Multiply {
 	}
 
 
+  /*public IEnumerator WaitForButton()
+  {
+    while(!submitted)
+      yield return null;
+
+    this.GetComponent<ShowPanels>().HideMultiplyPanel();
+    a = Int32.Parse(answerInput.text);
+    if (a == x * y)
+    {
+      yield return true;
+    }
+    else
+    {
+      yield return false;
+    }
+  }*/
+    
 
     public bool check(int xCord, int yCord){
 
+        Debug.Log ("Checking " + xCord + " " + yCord);
+        x = xCord;
+        y = yCord;
         submitted = false;
 
         //show multiply panel
         this.GetComponent<ShowPanels>().ShowMultiplyPanel();
         firstNumber.text = xCord.ToString();
         secondNumber.text = yCord.ToString();
-
-        while (!submitted)
+   
+        //WaitForButton();
+        
+        /*while (submitted == false)
         {
+            yield return null;
             //wait for button press and submission of answer      
         }
 
         this.GetComponent<ShowPanels>().HideMultiplyPanel();
-        
-        int a = Int32.Parse(answerInput.text);
+        */
         if (a == xCord * yCord)
         {
             return true;
@@ -104,12 +127,6 @@ public class level : Multiply {
             return false;
         }
         
-    /*
-		if (ocean [xCord, yCord] == 1) {
-			Debug.Log ("hit");
-		} else {
-			Debug.Log ("miss");
-		}*/
 	}
 	
 	// Update is called once per frame
@@ -119,6 +136,14 @@ public class level : Multiply {
 
     public void submission()
     {
+        Debug.Log ("fire pressed");
         submitted = true;
-    }
+        /*a = Int32.Parse (answerInput.text);
+        if (a == x * y)
+        {
+            this.GetComponentInChildren<button> ().discovered = true;
+            this.GetComponentInChildren<button> ().checkDiscovered ();
+            this.GetComponent<ShowPanels>().HideMultiplyPanel();
+        }*/
+  }
 }
