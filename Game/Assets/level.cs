@@ -80,6 +80,7 @@ public class level : MonoBehaviour {
 
         //show multiply panel
         this.GetComponent<ShowPanels>().ShowMultiplyPanel();
+        //this.GetComponent<ShowPanels>().multiplyPanel.transform.position = new Vector3(350, 350, 0);
 
 		if (ocean [xCord, yCord] == 1) {
 			Debug.Log ("hit");
