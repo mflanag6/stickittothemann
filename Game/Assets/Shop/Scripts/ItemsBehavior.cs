@@ -13,6 +13,9 @@ public class ItemsBehavior : MonoBehaviour {
 
 	bool[] isbought = new bool[10];
 
+	// GameObject to display when an item is bought
+	public GameObject IsBought_PopUp;
+
 	// Use this for initialization
 	public void Start () {
 		// Check is bought and display accordingly
@@ -35,21 +38,40 @@ public class ItemsBehavior : MonoBehaviour {
 				isbought [k] = false;
 			}
 		}
+
+		// Assume no item is actively being bought before Buy Button clicked 
+		IsBought_PopUp.SetActive (false);
 	}
 
 	// Function: Item Bought
 	public void OnBuyButtonClick(){
-		// Always show Bought Icon in place of item i
-		items [i].enabled = false;
-		BoughtIcon.enabled = true;
+		// Check whether item is already bought
+		if (isbought [i] == false) {
+			// Always show Bought Icon in place of item i
+			items [i].enabled = false;
+			BoughtIcon.enabled = true;
 
-		// Assure this by setting isbought to true
-		isbought [i] = true;
+			// Assure this by setting isbought to true
+			isbought [i] = true;
+				
+			// Display Is Bought Pop Up
+			IsBought_PopUp.SetActive (true);
+		}
+		// If item has already been bought, do nothing
 
+	}
+
+	// Function: Get out of Item Bought Pop Up
+	public void OnOKButtonClick(){
+		// get out of Item is bought pop up
+		IsBought_PopUp.SetActive(false);
 	}
 
 	// Function: User goes right
 	public void OnRightButtonClick(){
+		// Make sure IsBought Pop Up is not on display
+		IsBought_PopUp.SetActive(false);
+
 		// Only display i+1 item if i+1 item is not the end of the list
 		if (i + 1 >= ITEMS) {
 			return;
@@ -77,6 +99,9 @@ public class ItemsBehavior : MonoBehaviour {
 	}
 	// Function: User goes left
 	public void OnLeftButtonClick(){
+		// Make sure IsBought Pop Up is not on display
+		IsBought_PopUp.SetActive(false);
+
 		// Only display i-1 item if i-1 item is not the end of the list
 		if (i -1 <= -1) {
 			return;
