@@ -29,7 +29,7 @@ public class button : MonoBehaviour {
 		Debug.Log(x + " " + y);
         
         if(!discovered)
-		    discovered = this.GetComponentInParent<level>().check(x, y);
+		    this.GetComponentInParent<level>().check(x, y, this);
         
         checkDiscovered();
    	}

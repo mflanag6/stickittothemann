@@ -7,7 +7,9 @@ public class level : Multiply {
 
 
     public GameObject Tile;
-    public RectTransform Multiply;  
+    public RectTransform Multiply;
+
+    public button buttonInstance;
 
 	public int size;
 	private int [,] ocean;
@@ -25,7 +27,9 @@ public class level : Multiply {
     }
 
     public void createGrid() {
-    
+
+        showPanels.ShowTutorialPanel();
+
 		ocean = new int[10, 10];
 
 
@@ -73,6 +77,7 @@ public class level : Multiply {
 			}
 		}
 
+        
         Debug.Log ("done w/ board");
 
 	}
@@ -96,36 +101,28 @@ public class level : Multiply {
   }*/
     
 
-    public bool check(int xCord, int yCord){
+    public void check(int xCord, int yCord, button b){
 
         Debug.Log ("Checking " + xCord + " " + yCord);
         x = xCord;
         y = yCord;
         submitted = false;
 
+        buttonInstance = b;
+
         //show multiply panel
         this.GetComponent<ShowPanels>().ShowMultiplyPanel();
         firstNumber.text = xCord.ToString();
         secondNumber.text = yCord.ToString();
    
-        //WaitForButton();
-        
-        /*while (submitted == false)
-        {
-            yield return null;
-            //wait for button press and submission of answer      
-        }
-
-        this.GetComponent<ShowPanels>().HideMultiplyPanel();
-        */
-        if (a == xCord * yCord)
+        /*if (a == xCord * yCord)
         {
             return true;
         }
         else
         {
             return false;
-        }
+        }*/
         
 	}
 	
@@ -138,12 +135,13 @@ public class level : Multiply {
     {
         Debug.Log ("fire pressed");
         submitted = true;
-        /*a = Int32.Parse (answerInput.text);
+
+        a = Int32.Parse (answerInput.text);
         if (a == x * y)
         {
-            this.GetComponentInChildren<button> ().discovered = true;
-            this.GetComponentInChildren<button> ().checkDiscovered ();
+            buttonInstance.discovered = true;
+            buttonInstance.checkDiscovered();
             this.GetComponent<ShowPanels>().HideMultiplyPanel();
-        }*/
-  }
+        }
+    }
 }
