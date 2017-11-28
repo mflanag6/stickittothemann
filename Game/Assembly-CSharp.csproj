@@ -63,8 +63,8 @@
      <Compile Include="Assets\Game Jam Menu Template\Scripts\StartOptions.cs" />
      <Compile Include="Assets\level.cs" />
      <Compile Include="Assets\Multiply.cs" />
-     <Compile Include="Assets\Shop_Files\Shop\Scripts\Back.cs" />
-     <Compile Include="Assets\Shop_Files\Shop\Scripts\ItemsBehavior.cs" />
+     <Compile Include="Assets\Shop\Scripts\Back.cs" />
+     <Compile Include="Assets\Shop\Scripts\ItemsBehavior.cs" />
      <None Include="Assets\Game Jam Menu Template\Fonts\OpenSans\License!.txt" />
      <None Include="Assets\Game Jam Menu Template\GameJamTemplateReadMe.txt" />
  <Reference Include="UnityEngine.Analytics">
