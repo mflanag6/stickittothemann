@@ -28,7 +28,7 @@ public class level : Multiply {
 
     public void createGrid() {
 
-        showPanels.ShowTutorialPanel();
+        //showPanels.ShowTutorialPanel();
 
 		ocean = new int[10, 10];
 
@@ -81,24 +81,7 @@ public class level : Multiply {
         Debug.Log ("done w/ board");
 
 	}
-
-
-  /*public IEnumerator WaitForButton()
-  {
-    while(!submitted)
-      yield return null;
-
-    this.GetComponent<ShowPanels>().HideMultiplyPanel();
-    a = Int32.Parse(answerInput.text);
-    if (a == x * y)
-    {
-      yield return true;
-    }
-    else
-    {
-      yield return false;
-    }
-  }*/
+    
     
 
     public void check(int xCord, int yCord, button b){
@@ -114,15 +97,6 @@ public class level : Multiply {
         this.GetComponent<ShowPanels>().ShowMultiplyPanel();
         firstNumber.text = xCord.ToString();
         secondNumber.text = yCord.ToString();
-   
-        /*if (a == xCord * yCord)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }*/
         
 	}
 	
