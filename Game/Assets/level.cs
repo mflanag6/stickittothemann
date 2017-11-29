@@ -28,7 +28,7 @@ public class level : Multiply {
 
     public void createGrid() {
 
-        //showPanels.ShowTutorialPanel();
+        showPanels.ShowHelpPanel();
 
 		ocean = new int[10, 10];
 
