@@ -8,8 +8,12 @@ public class ItemsBehavior : MonoBehaviour {
 	public Image[] items;
 	public Image BoughtIcon;
 
+	public Text[] titles;
+	public Text[] descriptions;
+
 	public int i = 0;
 	public int ITEMS = 2;
+
 
 	bool[] isbought = new bool[10];
 
@@ -21,15 +25,24 @@ public class ItemsBehavior : MonoBehaviour {
 		// Check is bought and display accordingly
 		if (isbought [0] == true) {
 			items [0].enabled = false;
+			descriptions[0].enabled = false;
+			titles [0].enabled = false;
+
 			BoughtIcon.enabled = true;
 		} else {
 			items [0].enabled = true;
+			descriptions[0].enabled = true;
+			titles [0].enabled = true;
+
 			BoughtIcon.enabled = false;
+
 		}
 
 		// Don't display any other item besides item 0
 		for (int j = 1; j < ITEMS; j++) {
 			items [j].enabled = false;
+			descriptions[j].enabled = false;
+			titles [j].enabled = false;
 		}
 
 		// If an item has not been bought, set isbought to false
@@ -49,6 +62,9 @@ public class ItemsBehavior : MonoBehaviour {
 		if (isbought [i] == false) {
 			// Always show Bought Icon in place of item i
 			items [i].enabled = false;
+			descriptions[i].enabled = false;
+			titles [i].enabled = false;
+
 			BoughtIcon.enabled = true;
 
 			// Assure this by setting isbought to true
@@ -82,16 +98,24 @@ public class ItemsBehavior : MonoBehaviour {
 			if (isbought [i+1] == false) {
 				BoughtIcon.enabled = false; // don't display bought icon
 				items[i+1].enabled = true; // do display next item
+				descriptions[i+1].enabled = true;
+				titles [i+1].enabled = true;
+
 				items [i].enabled = false; // don't display current item
-				
+				descriptions[i].enabled = false;
+				titles [i].enabled = false;
 				// iterate item
 				i++;
 			// If next item has been bought, show bought icon
 			} else {
 				BoughtIcon.enabled = true; // do display bought icon
 				items[i+1].enabled = false; // don't display next item
-				items [i].enabled = false; // don't display current item
+				descriptions[i+1].enabled = false;
+				titles [i+1].enabled = false;
 
+				items [i].enabled = false; // don't display current item
+				descriptions[i].enabled = false;
+				titles [i].enabled = false;
 				// iterate item
 				i++;
 			}
@@ -112,16 +136,24 @@ public class ItemsBehavior : MonoBehaviour {
 			if (isbought [i-1] == false) {
 				BoughtIcon.enabled = false; // don't display bought icon
 				items[i-1].enabled = true; // do display previous item
-				items [i].enabled = false; // don't display current item
+				descriptions[i-1].enabled = true;
+				titles [i-1].enabled = true;
 
+				items [i].enabled = false; // don't display current item
+				descriptions[i].enabled = false;
+				titles [i].enabled = false;
 				// iterate item
 				i--;
 			// If previous item has been bought, show bought icon
 			} else {
 				BoughtIcon.enabled = true; // do display bought icon
 				items[i-1].enabled = false; // don't display previous item
-				items [i].enabled = false; // don't display current item
+				descriptions[i-1].enabled = false;
+				titles [i-1].enabled = false;
 
+				items [i].enabled = false; // don't display current item
+				descriptions[i].enabled = false;
+				titles [i].enabled = false;
 				// iterate item
 				i--;
 			}
