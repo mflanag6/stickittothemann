@@ -109,7 +109,7 @@ public class level : Multiply {
     {
         Debug.Log ("fire pressed");
         submitted = true;
-
+	try{
         a = Int32.Parse (answerInput.text);
         if (a == x * y)
         {
@@ -123,6 +123,9 @@ public class level : Multiply {
             showPanels.ShowLevelWinPanel();
         }
     }
+    catch{
+    }
+    }
     
     public void endLevel()
     {
@@ -135,9 +138,9 @@ public class level : Multiply {
             {
                 GameObject.Destroy (child.gameObject);
             }
-        }
-        
+        }        
         showPanels.ShowLevelPanel();
+		
     }
    
 }
