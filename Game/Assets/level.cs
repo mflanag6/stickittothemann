@@ -56,7 +56,6 @@ public class level : Multiply {
 				/// j is the yvalue of the thing
        
                 Vector3 pos = new Vector3(i * 100 + offsetX, j * 100 + offsetY, 0);
-                Debug.Log ("new pos is " + pos);
 
 				if (ocean [i, j] == 0) {
                     GameObject tile = Instantiate(oceanTile);
@@ -84,7 +83,8 @@ public class level : Multiply {
     
     
 
-    public void check(int xCord, int yCord, button b){
+    public void check(int xCord, int yCord, button b)
+    {
 
         Debug.Log ("Checking " + xCord + " " + yCord);
         x = xCord;
@@ -94,7 +94,7 @@ public class level : Multiply {
         buttonInstance = b;
 
         //show multiply panel
-        this.GetComponent<ShowPanels>().ShowMultiplyPanel();
+        showPanels.ShowMultiplyPanel();
         firstNumber.text = xCord.ToString();
         secondNumber.text = yCord.ToString();
         
@@ -113,9 +113,36 @@ public class level : Multiply {
         a = Int32.Parse (answerInput.text);
         if (a == x * y)
         {
-            buttonInstance.discovered = true;
-            buttonInstance.checkDiscovered();
-            this.GetComponent<ShowPanels>().HideMultiplyPanel();
+          buttonInstance.discovered = true;
+          buttonInstance.checkDiscovered ();
+          showPanels.HideMultiplyPanel ();
+        }
+
+        if (buttonInstance.revealSprite.name == "ship-tile")
+        {
+            showPanels.ShowLevelWinPanel();
         }
     }
+    
+    public void endLevel()
+    {
+    Debug.Log (pirateTile.name);
+    Debug.Log (oceanTile.name);
+
+
+
+        Debug.Log ("printing children - or none");
+        foreach (Transform child in Multiply.transform)
+        {
+            Debug.Log (child.name);
+            if (child.name == "pirateTile(Clone)" || child.name == "oceanTile(Clone)")
+            {
+                Debug.Log ("destroying");
+                GameObject.Destroy (child.gameObject);
+            }
+        }
+        
+        showPanels.ShowLevelPanel();
+    }
+   
 }
