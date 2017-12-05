@@ -28,6 +28,8 @@ public class LevelSelect : MonoBehaviour {
 	}
 
 	public void checkLocked(int level) {
+    Debug.Log ("Checking locked");
+        Debug.Log ("Highest level is " + highestLevel);
 		selectedLevel = level;
 		if (selectedLevel > highestLevel) {				// Level is locked
 			showPanels.ShowPasswordPanel();

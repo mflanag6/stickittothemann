@@ -126,13 +126,13 @@ public class level : Multiply {
     
     public void endLevel()
     {
+        highestLevel++;
+    Debug.Log ("Highest level set to " + highestLevel);
         //delete board
         foreach (Transform child in Multiply.transform)
         {
-            Debug.Log (child.name);
             if (child.name == "pirateTile(Clone)" || child.name == "oceanTile(Clone)")
             {
-                Debug.Log ("destroying");
                 GameObject.Destroy (child.gameObject);
             }
         }
