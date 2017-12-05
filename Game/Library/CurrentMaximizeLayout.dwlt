@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 681, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 3777
+  controlID: 6853
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 3778
+  controlID: 6854
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 221}
   m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 3726
+  controlID: 6808
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,8 +166,8 @@ MonoBehaviour:
     y: 0
     width: 251
     height: 385
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -201,9 +201,9 @@ MonoBehaviour:
     height: 364
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 708dffff
-    m_LastClickedID: -29328
-    m_ExpandedIDs: de97fffffaafffff28b6ffff00b8ffff8ccaffff58cfffff2ae4ffff54e9ffff8aedffffacf9ffff1cfcffff00000000d43400005835000098350000
+    m_SelectedIDs: 34fafeff
+    m_LastClickedID: -67020
+    m_ExpandedIDs: a868feff24fafeff34fafeff3afafeffa0fbfeffa0fcfeffde97fffffaafffff28b6ffff00b8ffff8ccaffff58cfffff2ae4ffff54e9ffff8aedffffacf9ffff1cfcffff00000000d43400005835000098350000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -417,19 +417,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Shop/Scripts
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 63
   m_LastFolders:
-  - Assets/Shop/Scripts
+  - Assets
   m_LastFoldersGridSize: 63
   m_LastProjectPath: /Users/ashleycummins/School/senior/first semester/Educational
     Game Design/Final_Game/stickittothemann/Game
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 59}
-    m_SelectedIDs: 1a260000
-    m_LastClickedID: 9754
+    m_SelectedIDs: 0c260000
+    m_LastClickedID: 9740
     m_ExpandedIDs: 000000000c260000222600003e260000b2260000ee2600005627000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -483,8 +483,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 708dffff
-    m_LastClickedInstanceID: -29328
+    m_SelectedInstanceIDs: 34fafeff
+    m_LastClickedInstanceID: -67020
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: b82300000633000052220000c22600001e26000000000000
     m_RenameOverlay:
@@ -510,7 +510,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 84}
     m_GridSize: 63
   m_DirectoriesAreaWidth: 165
 --- !u!114 &12
