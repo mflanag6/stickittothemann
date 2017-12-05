@@ -44,13 +44,11 @@ public class ShowPanels : MonoBehaviour {
     public void ShowLevelPanel()
     {
         levelPanel.SetActive(true);
-        optionsTint.SetActive(true);
     }
 
     public void HideLevelPanel()
     {
         levelPanel.SetActive (false);
-        optionsTint.SetActive (false);
     }
 
 	//Call this function to activate and display the main menu panel during the main menu

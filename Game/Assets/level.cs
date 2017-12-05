@@ -126,12 +126,7 @@ public class level : Multiply {
     
     public void endLevel()
     {
-    Debug.Log (pirateTile.name);
-    Debug.Log (oceanTile.name);
-
-
-
-        Debug.Log ("printing children - or none");
+        //delete board
         foreach (Transform child in Multiply.transform)
         {
             Debug.Log (child.name);
