@@ -62,6 +62,7 @@
      <Compile Include="Assets\Game Jam Menu Template\Scripts\ShowPanels.cs" />
      <Compile Include="Assets\Game Jam Menu Template\Scripts\StartOptions.cs" />
      <Compile Include="Assets\level.cs" />
+     <Compile Include="Assets\Money Conversion\Money_Conversion_Script.cs" />
      <Compile Include="Assets\Multiply.cs" />
      <Compile Include="Assets\Shop\Scripts\Back.cs" />
      <Compile Include="Assets\Shop\Scripts\ItemsBehavior.cs" />
