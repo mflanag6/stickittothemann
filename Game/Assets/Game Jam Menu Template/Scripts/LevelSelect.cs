@@ -23,7 +23,7 @@ public class LevelSelect : MonoBehaviour {
     public Multiply multiply;
 
 	void Start () {
-        //highestLevel = 1;
+        highestLevel = 1;
 		// titleText.text = "This level is locked. Enter the password to unlock it.";
 		// showPanels.HidePasswordPanel();
 	}
