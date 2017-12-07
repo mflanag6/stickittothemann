@@ -9,7 +9,7 @@ public class LevelSelect : MonoBehaviour {
 	public ShowPanels showPanels;						// Reference to ShowPanels script on UI GameObject, to show and hide panels
 	public Text titleText;								// Instructional text to unlock password
 	public string theInput;								// Password text the user enters
-	public int highestLevel = 1;						// Maximum level reached by the user
+	public int highestLevel = 1;						    // Maximum level reached by the user
 	private int selectedLevel;
 	private string passwordLevel2 = "password2";		// Password to unlock Level 2
 	private string passwordLevel3 = "password3";		// Password to unlock Level 3
@@ -23,11 +23,18 @@ public class LevelSelect : MonoBehaviour {
     public Multiply multiply;
 
 	void Start () {
+        //highestLevel = 1;
 		// titleText.text = "This level is locked. Enter the password to unlock it.";
 		// showPanels.HidePasswordPanel();
 	}
 
+    void Update() {
+    }
+
 	public void checkLocked(int level) {
+        highestLevel = levelInstance.highestUnlocked;
+        //Debug.Log ("Checking locked, level is " + level);
+        //Debug.Log ("Highest level is " + highestLevel);
 		selectedLevel = level;
 		if (selectedLevel > highestLevel) {				// Level is locked
 			showPanels.ShowPasswordPanel();
@@ -36,7 +43,6 @@ public class LevelSelect : MonoBehaviour {
 			showPanels.HideLevelPanel();
             levelInstance.size = levelSize;
             levelInstance.createGrid();
-            //startOptions.OnLevelWasLoaded();
 			// Proceed to proper level
 		}
 	}

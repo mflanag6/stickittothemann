@@ -20,6 +20,8 @@ public class level : Multiply {
     private bool submitted = false;
     private int x, y, a;
 
+    public int highestUnlocked = 1;
+
     
 
 	// Use this for initialization
@@ -40,8 +42,6 @@ public class level : Multiply {
 			}
 		}
 
-
-
 		int x = UnityEngine.Random.Range(0,size);
 		int y = UnityEngine.Random.Range(0,size);
 		ocean[x,y] = 1;
@@ -56,7 +56,6 @@ public class level : Multiply {
 				/// j is the yvalue of the thing
        
                 Vector3 pos = new Vector3(i * 100 + offsetX, j * 100 + offsetY, 0);
-                Debug.Log ("new pos is " + pos);
 
 				if (ocean [i, j] == 0) {
                     GameObject tile = Instantiate(oceanTile);
@@ -84,9 +83,9 @@ public class level : Multiply {
     
     
 
-    public void check(int xCord, int yCord, button b){
+    public void check(int xCord, int yCord, button b)
+    {
 
-        Debug.Log ("Checking " + xCord + " " + yCord);
         x = xCord;
         y = yCord;
         submitted = false;
@@ -94,7 +93,7 @@ public class level : Multiply {
         buttonInstance = b;
 
         //show multiply panel
-        this.GetComponent<ShowPanels>().ShowMultiplyPanel();
+        showPanels.ShowMultiplyPanel();
         firstNumber.text = xCord.ToString();
         secondNumber.text = yCord.ToString();
         
@@ -109,13 +108,38 @@ public class level : Multiply {
     {
         Debug.Log ("fire pressed");
         submitted = true;
-
+	try{
         a = Int32.Parse (answerInput.text);
         if (a == x * y)
         {
-            buttonInstance.discovered = true;
-            buttonInstance.checkDiscovered();
-            this.GetComponent<ShowPanels>().HideMultiplyPanel();
+          buttonInstance.discovered = true;
+          buttonInstance.checkDiscovered ();
+          showPanels.HideMultiplyPanel ();
+        }
+
+        if (buttonInstance.revealSprite.name == "ship-tile")
+        {
+            showPanels.ShowLevelWinPanel();
         }
     }
+    catch{
+    }
+    }
+    
+    public void endLevel()
+    {
+        highestUnlocked++;
+        //Debug.Log ("Highest level set to " + highestUnlocked);
+        //delete board
+        foreach (Transform child in Multiply.transform)
+        {
+            if (child.name == "pirateTile(Clone)" || child.name == "oceanTile(Clone)")
+            {
+                GameObject.Destroy (child.gameObject);
+            }
+        }        
+        showPanels.ShowLevelPanel();
+		
+    }
+   
 }
