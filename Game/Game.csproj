@@ -103,6 +103,7 @@
     <Compile Include="Assets\Game Jam Menu Template\Scripts\DontDestroy.cs" />
     <Compile Include="Assets\Game Jam Menu Template\Scripts\EventSystemChecker.cs" />
     <Compile Include="Assets\Game Jam Menu Template\Scripts\LevelSelect.cs" />
+    <Compile Include="Assets\Game Jam Menu Template\Scripts\LockLevel.cs" />
     <Compile Include="Assets\Game Jam Menu Template\Scripts\Pause.cs" />
     <Compile Include="Assets\Game Jam Menu Template\Scripts\PlayMusic.cs" />
     <Compile Include="Assets\Game Jam Menu Template\Scripts\QuitApplication.cs" />
@@ -111,6 +112,8 @@
     <Compile Include="Assets\Game Jam Menu Template\Scripts\StartOptions.cs" />
     <Compile Include="Assets\level.cs" />
     <Compile Include="Assets\Multiply.cs" />
+    <Compile Include="Assets\Shop\Scripts\Back.cs" />
+    <Compile Include="Assets\Shop\Scripts\ItemsBehavior.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Game Jam Menu Template\Fonts\OpenSans\License!.txt" />

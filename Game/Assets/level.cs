@@ -20,6 +20,8 @@ public class level : Multiply {
     private bool submitted = false;
     private int x, y, a;
 
+    public int highestUnlocked = 1;
+
     
 
 	// Use this for initialization
@@ -39,8 +41,6 @@ public class level : Multiply {
 
 			}
 		}
-
-
 
 		int x = UnityEngine.Random.Range(0,size);
 		int y = UnityEngine.Random.Range(0,size);
@@ -86,7 +86,6 @@ public class level : Multiply {
     public void check(int xCord, int yCord, button b)
     {
 
-        Debug.Log ("Checking " + xCord + " " + yCord);
         x = xCord;
         y = yCord;
         submitted = false;
@@ -129,8 +128,8 @@ public class level : Multiply {
     
     public void endLevel()
     {
-        highestLevel++;
-    Debug.Log ("Highest level set to " + highestLevel);
+        highestUnlocked++;
+        //Debug.Log ("Highest level set to " + highestUnlocked);
         //delete board
         foreach (Transform child in Multiply.transform)
         {
