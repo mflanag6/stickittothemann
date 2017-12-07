@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{3400B0F8-652C-1691-E7C8-9D85B1E4B2AC}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Game Jam Menu Template/Scripts/LevelSelect.cs">
+    <Files>
+      <File FileName="Assets/Game Jam Menu Template/Scripts/LockLevel.cs" Line="21" Column="1" />
+      <File FileName="Assets/Game Jam Menu Template/Scripts/LevelSelect.cs" Line="76" Column="13" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Game PreferredExecutionTarget="Unity.Editor" />
+</Properties>
