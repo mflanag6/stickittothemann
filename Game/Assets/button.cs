@@ -12,11 +12,15 @@ public class button : MonoBehaviour {
     public bool discovered;
 
 
+
 	// Use this for initialization
 	void Start () {
 		//Button btn = yourButton.GetComponent<Button>();
 		this.GetComponent<Button>().onClick.AddListener(delegate { TaskOnClick(); });
 		image = this.GetComponent<Image> ();
+
+
+
 	}
 	
 	// Update is called once per frame
