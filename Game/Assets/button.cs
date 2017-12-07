@@ -26,7 +26,9 @@ public class button : MonoBehaviour {
 	
     void TaskOnClick()
 	{
-		Debug.Log(x + " " + y);
+		//Debug.Log(x + " " + y);
+        //Debug.Log (revealSprite.name);
+        //Debug.Log (revealSprite);
         
         if(!discovered)
 		    this.GetComponentInParent<level>().check(x, y, this);

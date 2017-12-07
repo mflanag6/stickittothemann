@@ -12,6 +12,8 @@ public class ShowPanels : MonoBehaviour {
     public GameObject levelPanel;                           //Store a reference to the Game Object LevelPanel
     public GameObject passwordPanel;                        //Store a reference to the Game Object PasswordPanel
     public GameObject multiplyPanel;                        //Store a reference ot the Game Object MultiplyPanel -- this is in a different prefab
+    public GameObject levelWinPanel;
+    public GameObject levelLosePanel;
 
 	//Call this function to activate and display the Options panel during the main menu
 	public void ShowOptionsPanel()
@@ -42,13 +44,11 @@ public class ShowPanels : MonoBehaviour {
     public void ShowLevelPanel()
     {
         levelPanel.SetActive(true);
-        optionsTint.SetActive(true);
     }
 
     public void HideLevelPanel()
     {
         levelPanel.SetActive (false);
-        optionsTint.SetActive (false);
     }
 
 	//Call this function to activate and display the main menu panel during the main menu
@@ -114,5 +114,26 @@ public class ShowPanels : MonoBehaviour {
         multiplyPanel.SetActive (false);
     }
 
+    public void ShowLevelWinPanel()
+    {
+        levelWinPanel.SetActive (true);
+    }
+
+    //Call this function to deactivate and hide the level win panel during gameplay
+    public void HideLevelWinPanel()
+    {
+        levelWinPanel.SetActive (false);
+    }
+
+    public void ShowLevelLosePanel()
+    {
+        levelLosePanel.SetActive (true);
+    }
+
+      //Call this function to deactivate and hide the level win panel during gameplay
+    public void HideLevelLosePanel()
+    {
+        levelLosePanel.SetActive (false);
+    }
 
 }

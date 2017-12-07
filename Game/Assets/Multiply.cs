@@ -3,10 +3,8 @@ using System.Collections;
 using System;
 using UnityEngine.UI;
 
-public class Multiply : MonoBehaviour {
+public class Multiply : LevelSelect {
 
-    public ShowPanels showPanels;
-    public level level1;
 	private int firstNum;
 	private int secondNum;
 	private int answer;
