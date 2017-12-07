@@ -14,11 +14,10 @@ public class LockLevel : MonoBehaviour {
 		
 	}
 
-    GameObject go = GameObject.Find("VisualHealth");
- 
+    //GameObject go = GameObject.Find("VisualHealth");
     //check if we have a match 
-        if(go!= null) {
+    //if (go!= null) {
         //assign sprite reference to your variable 
-        _canvas = go.GetComponent<SpriteRenderer>().sprite;
-    }
+    //    _canvas = go.GetComponent<SpriteRenderer>().sprite;
+    //}
 }
