@@ -21,6 +21,7 @@ public class level : Multiply {
     private int x, y, a;
 
     public int highestUnlocked = 1;
+    public LevelSelect currentLevel;
 
     
 
@@ -128,7 +129,7 @@ public class level : Multiply {
     
     public void endLevel()
     {
-        highestUnlocked++;
+        highestUnlocked += 1;
         //Debug.Log ("Highest level set to " + highestUnlocked);
         //delete board
         foreach (Transform child in Multiply.transform)
