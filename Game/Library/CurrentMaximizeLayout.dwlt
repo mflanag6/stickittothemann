@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 45
+  controlID: 114
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -201,9 +201,9 @@ MonoBehaviour:
     height: 605
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 7a270000
-    m_LastClickedID: 10106
-    m_ExpandedIDs: 12f9ffff1afcffff000000007a27000084270000
+    m_SelectedIDs: 68270000
+    m_LastClickedID: 10088
+    m_ExpandedIDs: 0efcffff1afcffff0000000084270000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -417,18 +417,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Game Jam Menu Template/Scripts
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 63
   m_LastFolders:
-  - Assets/Game Jam Menu Template/Scripts
+  - Assets
   m_LastFoldersGridSize: 63
   m_LastProjectPath: /Users/nickpalutsis/github/school/stickittothemann/Game
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 15.996094}
-    m_SelectedIDs: e0260000
-    m_LastClickedID: 9952
+    m_SelectedIDs: 12260000
+    m_LastClickedID: 9746
     m_ExpandedIDs: 00000000122600002c2600004c2600001827000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -482,9 +482,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 7a270000
-    m_LastClickedInstanceID: 10106
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 68270000
+    m_LastClickedInstanceID: 10088
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: b82300000633000052220000c22600001e26000000000000e22600001c270000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -589,7 +589,7 @@ MonoBehaviour:
     y: 93
     width: 443
     height: 876
-  m_ScrollPosition: {x: 0, y: 0}
+  m_ScrollPosition: {x: 0, y: 59.45508}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: -160

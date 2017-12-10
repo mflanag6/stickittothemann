@@ -97,6 +97,7 @@ public class LevelSelect : MonoBehaviour {
 
 		if (correct) {
 			if (showPanels != null) {
+                levelInstance.highestUnlocked = selectedLevel;
 				showPanels.HidePasswordPanel();
 				showPanels.HideLevelPanel();
                 
