@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Title.unity
+- path: Assets/Money Conversion/Money Conversion Mini Game.unity
   isLoaded: 1
   isActive: 1
