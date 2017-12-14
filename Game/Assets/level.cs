@@ -23,7 +23,10 @@ public class level : Multiply {
     public int highestUnlocked = 1;
     public int currentLevel;
 
-    
+	public GameObject profile;
+
+
+
 
 	// Use this for initialization
 	public void Start() {
@@ -131,6 +134,10 @@ public class level : Multiply {
     
     public void endLevel()
     {
+		Debug.Log (profile);
+		var pro = profile.GetComponent<playerProfile>();
+		pro.gold += 50;
+
         highestUnlocked += 1;
         //Debug.Log ("Highest level set to " + highestUnlocked);
         //delete board

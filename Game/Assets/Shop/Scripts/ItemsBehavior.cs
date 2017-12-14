@@ -21,6 +21,10 @@ public class ItemsBehavior : MonoBehaviour {
 	// GameObject to display when an item is bought
 	public GameObject IsBought_PopUp;
 
+
+
+
+
 	// Use this for initialization
 	public void Start () {
 		// Check is bought and display accordingly
@@ -61,10 +65,36 @@ public class ItemsBehavior : MonoBehaviour {
 		IsBought_PopUp.SetActive (false);
 	}
 
+	public GameObject profile;
+	 
+	public bool moneyCheck(){
+		var hello = profile.GetComponent<playerProfile>();
+		int gold = hello.gold;
+		Debug.Log (gold);
+		if (gold < 5)
+			hello.gold += 50;
+		if (gold < 5) {
+			Debug.Log("not enough money");
+			return false;
+		}
+
+		return true;
+
+
+	}
+		
 	// Function: Item Bought
 	public void OnBuyButtonClick(){
 		// Check whether item is already bought
 		if (isbought [i] == false) {
+
+
+			/// make sure you can afford the item 
+			if (!moneyCheck ())
+				return;
+
+
+
 			// Always show Bought Icon in place of item i
 			items [i].enabled = false;
 			descriptions[i].enabled = false;
@@ -72,6 +102,7 @@ public class ItemsBehavior : MonoBehaviour {
 
 			// Don't display bought icon until after OK press
 			BoughtIcon.enabled = false;
+
 
 			// Assure this by setting isbought to true
 			isbought [i] = true;
