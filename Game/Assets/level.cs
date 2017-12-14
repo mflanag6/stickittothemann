@@ -25,9 +25,6 @@ public class level : Multiply {
 
 	public GameObject profile;
 
-
-
-
 	// Use this for initialization
 	public void Start() {
     }

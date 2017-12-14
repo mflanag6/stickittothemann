@@ -11,6 +11,8 @@ public class ItemsBehavior : MonoBehaviour {
 	public Text[] titles;
 	public Text[] descriptions;
 
+	public int[] costs;
+
 	public int i = 0;
 	public int ITEMS = 2;
 
@@ -20,10 +22,6 @@ public class ItemsBehavior : MonoBehaviour {
 
 	// GameObject to display when an item is bought
 	public GameObject IsBought_PopUp;
-
-
-
-
 
 	// Use this for initialization
 	public void Start () {
@@ -64,19 +62,19 @@ public class ItemsBehavior : MonoBehaviour {
 		// Assume no item is actively being bought before Buy Button clicked 
 		IsBought_PopUp.SetActive (false);
 	}
+		
 
-	public GameObject profile;
-	 
-	public bool moneyCheck(){
-		var hello = profile.GetComponent<playerProfile>();
-		int gold = hello.gold;
-		Debug.Log (gold);
-		if (gold < 5)
-			hello.gold += 50;
-		if (gold < 5) {
+	public bool moneyCheck(int item){
+		GameObject manager = GameObject.FindWithTag("Manager");
+		playerProfile profile = manager.GetComponent<playerProfile>();
+		Debug.Log (profile.gold);
+
+		if (profile.gold < 5) {
 			Debug.Log("not enough money");
 			return false;
 		}
+
+		profile.gold -= costs [item];
 
 		return true;
 
@@ -90,7 +88,7 @@ public class ItemsBehavior : MonoBehaviour {
 
 
 			/// make sure you can afford the item 
-			if (!moneyCheck ())
+			if (!moneyCheck (i))
 				return;
 
 
