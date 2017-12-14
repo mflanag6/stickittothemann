@@ -80,10 +80,10 @@ public class StartOptions : MonoBehaviour {
 		inMainMenu = false;
 
 		//Hide the main menu UI element
-		showPanels.HideMenu ();
+		showPanels.HideMenu();
 
 		//Load the selected scene, by scene index number in build settings
-		SceneManager.LoadScene (sceneToStart);
+		SceneManager.LoadScene(sceneToStart);
 	}
 
 	public void HideDelayed()
@@ -107,17 +107,8 @@ public class StartOptions : MonoBehaviour {
 		//Set trigger for animator to start animation fading out Menu UI
 		animMenuAlpha.SetTrigger ("fade");
 		Invoke("HideDelayed", fadeAlphaAnimationClip.length);
-		Debug.Log ("Game begins here.");
-
-        //TODO: add Nick's multiply thing here, change background
-        //TODO: show FTUE/tutorial text - names will need to be changed
-        //TODO: will probably need FTUE for each screen - level select, shoot, powerups, etc.
 
         showPanels.ShowTutorialPanel();     //Show a basic tutorial on how to select a level
-
-        //when you close the tutorial panel for now, it automatically shows the level panel
-        //this will probably need to be changed in the future
-        //showPanels.ShowLevelPanel();
 
 	}
 
