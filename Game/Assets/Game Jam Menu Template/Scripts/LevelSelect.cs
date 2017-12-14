@@ -25,8 +25,6 @@ public class LevelSelect : MonoBehaviour {
 
 	void Start () {
         highestLevel = 1;
-		// titleText.text = "This level is locked. Enter the password to unlock it.";
-		// showPanels.HidePasswordPanel();
 	}
 
     void Update() {
@@ -34,9 +32,8 @@ public class LevelSelect : MonoBehaviour {
 
 	public void checkLocked(int level) {
         highestLevel = levelInstance.highestUnlocked;
-        //Debug.Log ("Checking locked, level is " + level);
-        //Debug.Log ("Highest level is " + highestLevel);
 		selectedLevel = level;
+		levelInstance.currentLevel = level;
 		if (selectedLevel > highestLevel) {				// Level is locked
 			showPanels.ShowPasswordPanel();
             titleText.text = "Level Locked";

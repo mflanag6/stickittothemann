@@ -21,7 +21,7 @@ public class level : Multiply {
     private int x, y, a;
 
     public int highestUnlocked = 1;
-    public LevelSelect currentLevel;
+    public int currentLevel;
 
     
 
@@ -87,16 +87,18 @@ public class level : Multiply {
     public void check(int xCord, int yCord, button b)
     {
 
-        x = xCord;
-        y = yCord;
+        //x = xCord;
+        //y = yCord;
+		x = UnityEngine.Random.Range(0, 3*currentLevel);
+		y = UnityEngine.Random.Range(0, 3*currentLevel);
         submitted = false;
 
         buttonInstance = b;
 
         //show multiply panel
         showPanels.ShowMultiplyPanel();
-        firstNumber.text = xCord.ToString();
-        secondNumber.text = yCord.ToString();
+        firstNumber.text = x.ToString();
+        secondNumber.text = y.ToString();
         
 	}
 	
