@@ -11,6 +11,8 @@ public class ItemsBehavior : MonoBehaviour {
 	public Text[] titles;
 	public Text[] descriptions;
 
+	public int[] costs;
+
 	public int i = 0;
 	public int ITEMS = 2;
 
@@ -60,11 +62,35 @@ public class ItemsBehavior : MonoBehaviour {
 		// Assume no item is actively being bought before Buy Button clicked 
 		IsBought_PopUp.SetActive (false);
 	}
+		
 
+	public bool moneyCheck(int item){
+		GameObject manager = GameObject.FindWithTag("Manager");
+		playerProfile profile = manager.GetComponent<playerProfile>();
+
+		if (profile.gold < costs[item]) {
+			return false;
+		}
+
+		profile.gold -= costs [item];
+
+		return true;
+
+
+	}
+		
 	// Function: Item Bought
 	public void OnBuyButtonClick(){
 		// Check whether item is already bought
 		if (isbought [i] == false) {
+
+
+			/// make sure you can afford the item 
+			if (!moneyCheck (i))
+				return;
+
+
+
 			// Always show Bought Icon in place of item i
 			items [i].enabled = false;
 			descriptions[i].enabled = false;
@@ -72,6 +98,13 @@ public class ItemsBehavior : MonoBehaviour {
 
 			// Don't display bought icon until after OK press
 			BoughtIcon.enabled = false;
+
+			//Give item to player
+			playerProfile profile = GameObject.FindWithTag("Manager").GetComponent<playerProfile>();
+			if (i == 0)
+				profile.parrots += 1;
+			else if (i == 1)
+				profile.chest = true;
 
 			// Assure this by setting isbought to true
 			isbought [i] = true;

@@ -21,12 +21,16 @@ public class level : Multiply {
     private int x, y, a;
 
     public int highestUnlocked = 1;
-    public LevelSelect currentLevel;
+    public int currentLevel;
 
-    
+	public Text numPowerups;
+
+	public GameObject manager;
+	private playerProfile profile;
 
 	// Use this for initialization
 	public void Start() {
+		profile = manager.GetComponent<playerProfile> ();
     }
 
     public void createGrid() {
@@ -77,9 +81,8 @@ public class level : Multiply {
 			}
 		}
 
-        
-        Debug.Log ("done w/ board");
-
+		//var profile = manager.GetComponent<playerProfile> ();
+		numPowerups.text = profile.parrots.ToString();
 	}
     
     
@@ -87,16 +90,18 @@ public class level : Multiply {
     public void check(int xCord, int yCord, button b)
     {
 
-        x = xCord;
-        y = yCord;
+        //x = xCord;
+        //y = yCord;
+		x = UnityEngine.Random.Range(0, 3*currentLevel);
+		y = UnityEngine.Random.Range(0, 3*currentLevel);
         submitted = false;
 
         buttonInstance = b;
 
         //show multiply panel
         showPanels.ShowMultiplyPanel();
-        firstNumber.text = xCord.ToString();
-        secondNumber.text = yCord.ToString();
+        firstNumber.text = x.ToString();
+        secondNumber.text = y.ToString();
         
 	}
 	
@@ -105,13 +110,13 @@ public class level : Multiply {
 	
 	}
 
-    public void submission()
+	public void submission(bool powerup)
     {
-        Debug.Log ("fire pressed");
+		//var profile = manager.GetComponent<playerProfile> ();
         submitted = true;
 	try{
         a = Int32.Parse (answerInput.text);
-        if (a == x * y)
+		if (a == x * y || (powerup == true && profile.parrots > 0))
         {
           buttonInstance.discovered = true;
           buttonInstance.checkDiscovered ();
@@ -125,10 +130,22 @@ public class level : Multiply {
     }
     catch{
     }
+
+		if (powerup && profile.parrots > 0) {
+			profile.parrots -= 1;
+			numPowerups.text = profile.parrots.ToString();
+		}
     }
     
     public void endLevel()
     {
+		int reward = 10;
+		if (profile.chest) {
+			reward = 40;
+			profile.chest = false;
+		}
+		profile.gold += reward;
+
         highestUnlocked += 1;
         //Debug.Log ("Highest level set to " + highestUnlocked);
         //delete board
@@ -139,6 +156,7 @@ public class level : Multiply {
                 GameObject.Destroy (child.gameObject);
             }
         }        
+
         showPanels.ShowLevelPanel();
 		
     }
