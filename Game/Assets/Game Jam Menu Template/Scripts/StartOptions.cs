@@ -73,6 +73,13 @@ public class StartOptions : MonoBehaviour {
 		}	
 	}
 
+	public void StartMusic() {
+		GameObject UI = GameObject.FindWithTag ("UI");
+		var music = UI.GetComponent<AudioSource> ();
+		music.mute = false;
+
+	}
+
 
 	public void LoadDelayed()
 	{
