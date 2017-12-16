@@ -67,10 +67,8 @@ public class ItemsBehavior : MonoBehaviour {
 	public bool moneyCheck(int item){
 		GameObject manager = GameObject.FindWithTag("Manager");
 		playerProfile profile = manager.GetComponent<playerProfile>();
-		Debug.Log (profile.gold);
 
-		if (profile.gold < 5) {
-			Debug.Log("not enough money");
+		if (profile.gold < costs[item]) {
 			return false;
 		}
 
@@ -101,6 +99,12 @@ public class ItemsBehavior : MonoBehaviour {
 			// Don't display bought icon until after OK press
 			BoughtIcon.enabled = false;
 
+			//Give item to player
+			playerProfile profile = GameObject.FindWithTag("Manager").GetComponent<playerProfile>();
+			if (i == 0)
+				profile.parrots += 1;
+			else if (i == 1)
+				profile.chest = true;
 
 			// Assure this by setting isbought to true
 			isbought [i] = true;

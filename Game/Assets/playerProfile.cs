@@ -7,10 +7,8 @@ public class playerProfile : MonoBehaviour {
 
 	public int gold;
 
-	public bool parrot = false;
-
-
-
+	public int parrots = 0;
+	public bool chest = false;
 
 	// Use this for initialization
 	void Start () {
